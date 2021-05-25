@@ -1,0 +1,17 @@
+wasta-wine64 (6.4.0) focal; urgency=medium
+
+  * updating to version 6.4 from POL
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Tue, 25 May 2021 13:06:47 +0300
+
+wasta-wine64 (5.20.0) focal; urgency=medium
+
+  * updating to version 5.20-staging
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Tue, 27 Oct 2020 18:20:08 +0300
+
+wasta-wine64 (5.19.0) focal; urgency=medium
+
+  * initial 64bit release
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Fri, 23 Oct 2020 13:04:57 +0300

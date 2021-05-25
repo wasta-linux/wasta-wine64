@@ -1,0 +1,39 @@
+Source: wasta-wine64
+Section: utils
+Priority: optional
+Maintainer: Rik Shaw <rikshaw76@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), libfaudio0 (>= 19.06.07), libvkd3d1 (>= 1.0)
+Standards-Version: 3.9.5
+Homepage: https://github.com/wasta-linux/wasta-wine64
+
+Package: wasta-wine64
+Architecture: amd64
+Pre-Depends: dpkg (>= 1.14.12ubuntu3)
+Depends: rename,  ${misc:Depends}, libasound2 (>= 1.0.16), libc6 (>= 2.29), libfaudio0 (>= 19.06.07), libgcc-s1 (>= 3.0), libglib2.0-0 (>= 2.12.0), libgphoto2-6 (>= 2.5.10), libgphoto2-port12 (>= 2.5.10), libgstreamer-plugins-base1.0-0 (>= 1.0.0), libgstreamer1.0-0 (>= 1.4.0), liblcms2-2 (>= 2.2+git20110628), libldap-2.4-2 (>= 2.4.7), libmpg123-0 (>= 1.6.2), libopenal1 (>= 1.14), libpulse0 (>= 0.99.1), libudev1 (>= 183), libusb-1.0-0 (>= 2:1.0.21), libx11-6, libxext6, libxml2 (>= 2.9.0), libasound2-plugins, libncurses6 | libncurses5 | libncurses
+Recommends: winbind, libcairo2, libcap2-bin, libcapi20-3, libcups2, libdbus-1-3, libfontconfig1, libfreetype6, libglu1-mesa | libglu1, libgnutls30 | libgnutls-deb0-28 | libgnutls26, libgsm1, libgssapi-krb5-2, libgtk-3-0, libjpeg8 | libjpeg62-turbo, libkrb5-3, libodbc1, libosmesa6, libpcap0.8, libpng16-16 | libpng12-0, libsane | libsane1, libsdl2-2.0-0, libtiff5, libv4l-0, libva-drm2 | libva-drm1, libva-x11-2 | libva-x11-1, libva2 | libva1, libxcomposite1, libxcursor1, libxfixes3, libxi6, libxinerama1, libxrandr2, libxrender1, libxslt1.1, libxxf86vm1
+Description: Wasta packaging of WINE (64bit) for application stability
+ A stable version of WINE is preferred so that any user-level wine updates will
+ not interfere with application stability.
+ .
+ The wine version here was obtained by using PlayOnLinux, then is placed in
+ /opt/wasta-wine64. Since this folder is not part of $PATH any use of
+ wasta-wine64 would need to explicitly call these /opt/wasta-wine64 executables.
+ .
+ Any files ending in .so are rejected by Launchpad, so they need to be renamed
+ as part of the source package, then have the postinst name them back to .so
+ .
+ rename .so files:
+ find wasta-wine64/ -iname *.so -exec rename 's@.so$@.so-wasta@' {} \;
+ .
+ return to original names:
+ find wasta-wine64/ -iname *.so-wasta -exec rename 's@.so-wasta$@.so@' {} \;
+ .
+ Additionally, wine binaries may include debugging symbols. If get build errors
+ related to unstripped binaries, run these commands:
+ .
+ find wasta-wine64/ -iname *.so -exec objcopy --strip-debug --strip-unneeded {} \;
+ find wasta-wine64/bin/ -exec objcopy --strip-debug --strip-unneeded {} \;
+ .
+ To set the Dependencies and Recommends for wine, reference those listed at
+ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/main/binary-amd64/Packages
+ for the wine-staging-amd64 for the desired wine version.
