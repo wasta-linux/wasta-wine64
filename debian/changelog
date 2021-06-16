@@ -1,3 +1,9 @@
+wasta-wine64 (6.4.2) focal; urgency=medium
+
+  * updating Build-Depends for i386 compatibility
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Wed, 16 Jun 2021 15:21:47 -0500
+
 wasta-wine64 (6.4.1) focal; urgency=medium
 
   * updating depends / recommends to include wine-staging (i386) references,
