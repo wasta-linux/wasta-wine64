@@ -1,3 +1,9 @@
+wasta-wine64 (6.4.4) focal; urgency=medium
+
+  * adding a few amd64 Build-Depends so launchpad build will complete
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Thu, 17 Jun 2021 11:26:33 -0500
+
 wasta-wine64 (6.4.3) focal; urgency=medium
 
   * launchpad builds failing because i386 Build-Depends items
