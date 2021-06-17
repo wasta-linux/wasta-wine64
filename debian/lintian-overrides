@@ -1,6 +1,6 @@
 wasta-wine64: dir-or-file-in-opt
 wasta-wine64: duplicate-font-file
+wasta-wine64: extended-description-line-too-long
 wasta-wine64: portable-executable-missing-security-features
 wasta-wine64: shlib-with-non-pic-code
 wasta-wine64: statically-linked-binary
-wasta-wine64: extended-description-line-too-long
