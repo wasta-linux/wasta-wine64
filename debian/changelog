@@ -1,3 +1,11 @@
+wasta-wine64 (6.4.3) focal; urgency=medium
+
+  * launchpad builds failing because i386 Build-Depends items
+    not being installed. Attempting to remove /lib and /bin/wine
+    to be a "64 bit only" wine install.
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Wed, 16 Jun 2021 21:03:24 -0500
+
 wasta-wine64 (6.4.2) focal; urgency=medium
 
   * updating Build-Depends for i386 compatibility
