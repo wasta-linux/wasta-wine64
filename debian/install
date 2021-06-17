@@ -1,1 +1,1 @@
-install-files                        opt
+install-files/*                        opt

@@ -1,3 +1,10 @@
+wasta-wine64 (6.7.0) focal; urgency=medium
+
+  * refactoring to use a .tar.gz of the PlayOnLinux version to
+    avoid any issues with attempting to re-build at launchpad
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Thu, 17 Jun 2021 14:27:34 -0500
+
 wasta-wine64 (6.4.4) focal; urgency=medium
 
   * adding a few amd64 Build-Depends so launchpad build will complete
