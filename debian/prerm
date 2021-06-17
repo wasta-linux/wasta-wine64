@@ -23,7 +23,7 @@ case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
         DIR=/opt/wasta-wine64
         echo
-        echo "*** Removing wasta-wine64 directory since .so files renamed"
+        echo "*** removing wasta-wine64 directory"
         echo
         rm -rf $DIR
     ;;

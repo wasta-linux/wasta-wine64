@@ -7,11 +7,33 @@ set -e
 
 case "$1" in
     configure)
-        DIR=/opt/wasta-wine64
+        DIR=/opt
         echo
-        echo "*** Renaming .so-wasta files back to .so"
+        echo "*** merging wasta-wine64.tar.gz pieces"
         echo
-        find $DIR -iname *.so-wasta -exec rename 's@.so-wasta$@.so@' {} \;
+        cat $DIR/wasta-wine64-* > $DIR/wasta-wine64.tar.gz
+
+        cd $DIR
+        md5sum -c wasta-wine64.tar.gz.md5
+        OUTNUM=$?
+        if [ "$OUTNUM" -eq 0 ];
+        then
+            echo
+            echo "*** wasta-wine64.tar.gz md5 matches"
+            echo
+            rm $DIR/wasta-wine64-*
+
+            echo
+            echo "*** installing to /opt/wasta-wine64"
+            echo
+            tar -zxvf $DIR/wasta-wine64.tar.gz -C $DIR
+            sleep 1
+            rm $DIR/wasta-wine64.tar.gz
+        else
+            echo
+            echo "*** ERROR: wasta-wine64.tar.gz md5 did not match"
+            echo
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
