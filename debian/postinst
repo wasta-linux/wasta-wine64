@@ -9,29 +9,29 @@ case "$1" in
     configure)
         DIR=/opt
         echo
-        echo "*** merging wasta-wine64.tar.gz pieces"
+        echo "*** merging wasta-wine64.tar.bz2 pieces"
         echo
-        cat $DIR/wasta-wine64-* > $DIR/wasta-wine64.tar.gz
+        cat $DIR/wasta-wine64-* > $DIR/wasta-wine64.tar.bz2
 
         cd $DIR
-        md5sum -c wasta-wine64.tar.gz.md5
+        md5sum -c wasta-wine64.tar.bz2.md5
         OUTNUM=$?
         if [ "$OUTNUM" -eq 0 ];
         then
             echo
-            echo "*** wasta-wine64.tar.gz md5 matches"
+            echo "*** wasta-wine64.tar.bz2 md5 matches"
             echo
             rm $DIR/wasta-wine64-*
 
             echo
             echo "*** installing to /opt/wasta-wine64"
             echo
-            tar -zxvf $DIR/wasta-wine64.tar.gz -C $DIR
+            tar -jxf $DIR/wasta-wine64.tar.bz2 -C $DIR
             sleep 1
-            rm $DIR/wasta-wine64.tar.gz
+            rm $DIR/wasta-wine64.tar.bz2*
         else
             echo
-            echo "*** ERROR: wasta-wine64.tar.gz md5 did not match"
+            echo "*** ERROR: wasta-wine64.tar.bz2 md5 did not match"
             echo
         fi
     ;;

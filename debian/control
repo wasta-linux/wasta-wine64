@@ -19,20 +19,20 @@ Description: Wasta packaging of WINE (64bit) for application stability
  wasta-wine64 would need to explicitly call these /opt/wasta-wine64 executables.
  .
  Launchpad attempts to re-build binaries and it has trouble adding the :i386
- version of packages needed as 'Build-Depends' so instead a .tar.gz is made of
+ version of packages needed as 'Build-Depends' so instead a .tar.bz2 is made of
  the PlayOnLinux wine folder, performing a transform from the wine version to
- 'wasta-wine64' for consistency. Here is the command used to create the .tar.gz
+ 'wasta-wine64' for consistency. Here is the command used to create the .tar.bz2
  for wine version 6.7-staging, for example:
- tar -zcvf wasta-wine64.tar.gz 6.7-staging --transform='s@^6.7-staging@wasta-wine64@g'
+ tar -jcvf wasta-wine64.tar.bz2 6.7-staging --transform='s@^6.7-staging@wasta-wine64@g'
  .
- An md5sum is then made of this tar.gz:
- md5sum wasta-wine64.tar.gz > wasta-wine64.tar.gz.md5
+ An md5sum is then made of this tar.bz2:
+ md5sum wasta-wine64.tar.bz2 > wasta-wine64.tar.bz2.md5
  .
  Then, this will need to be split into 45MB chunks to comply with github
- size limits: split -d -b 45M wasta-wine64.tar.gz wasta-wine64-
+ size limits: split -d -b 45M wasta-wine64.tar.bz2 wasta-wine64-
  .
  The postinst will then re-assemble the chunks and check the md5sum:
- cat wasta-wine64-* > wasta-wine64.tar.gz
+ cat wasta-wine64-* > wasta-wine64.tar.bz2
  and then extract to /opt/wasta-wine64/
  .
  The prerm will remove the /opt/wasta-wine64 directory to clean up.

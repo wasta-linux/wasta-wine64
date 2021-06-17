@@ -3,7 +3,7 @@ Upstream-Name: wasta-wine64
 Source: https://github.com/wasta-linux/wasta-wine64
 Homepage: https://github.com/wasta-linux/wasta-wine64
 
-Files: wasta-wine64/*
+Files: install-files/*
 Copyright: Wine Developers <web-admin@winehq.org>
 License: GPL-3.0+
 
