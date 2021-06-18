@@ -2,6 +2,7 @@ Source: wasta-wine64
 Section: utils
 Priority: optional
 Maintainer: Rik Shaw <rikshaw76@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.5
 Homepage: https://github.com/wasta-linux/wasta-wine64
 

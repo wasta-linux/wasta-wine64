@@ -1,3 +1,9 @@
+wasta-wine64 (6.7.1) focal; urgency=medium
+
+  * adding debhelper to Build-Depends
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Thu, 17 Jun 2021 21:50:26 -0500
+
 wasta-wine64 (6.7.0) focal; urgency=medium
 
   * refactoring to use a .tar.gz of the PlayOnLinux version to
