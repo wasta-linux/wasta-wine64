@@ -1,3 +1,9 @@
+wasta-wine64 (7.0.0) focal; urgency=medium
+
+  * updating to wine-staging 7.0.0~focal-1 from winehq 
+
+ -- Rik Shaw <rikshaw76@gmail.com>  Thu, 10 Mar 2022 11:51:26 -0600
+
 wasta-wine64 (6.7.1) focal; urgency=medium
 
   * adding debhelper to Build-Depends
